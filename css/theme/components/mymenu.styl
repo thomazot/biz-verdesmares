@@ -1,0 +1,25 @@
+.mymenu
+    &#top-menu
+        .ul--0
+            container()
+
+            display: flex
+            justify-content: space-between
+            align-items: center
+            height: 32px
+            gap: gap
+
+        .li--0
+            margin-bottom: 0
+
+            @media media-max-lg
+                display: none
+
+                &:nth-child(1), &:nth-child(2)
+                    display: block
+
+        .a--0
+            color: var(--color-text-gray)
+            text-transform: uppercase
+            font-weight: semibold
+            font-size: 11px

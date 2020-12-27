@@ -1,0 +1,32 @@
+.loginout
+    display: flex
+    align-items: center
+    text-decoration: underline
+
+    &, a
+        color: currentColor
+        font-weight: medium
+        font-size: 12px
+
+    @media media-max-lg
+        margin-left: auto
+
+    .ico
+        flex: 0 0 21px
+        width: 21px
+        height: 21px
+
+        @media media-min-lg
+            margin-right: 10px
+
+    > div
+        @media media-max-lg
+            display: none
+
+    > a
+        @media media-max-lg
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 50px
+            height: 50px

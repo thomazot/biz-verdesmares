@@ -1353,7 +1353,7 @@ function categoriesTitle() {
             item.querySelector('.a--0').textContent.trim()
         const child = item.querySelector('.box--1')
 
-        child.setAttribute('data-title', title)
+        if (child) child.setAttribute('data-title', title)
     })
 }
 
@@ -1425,23 +1425,46 @@ function createRootVariableRGB() {
     })
 }
 
+function menuMobile() {
+    const button = $j('.categories .z-next')
+    button.click(function () {
+        console.log('add class')
+        $j(this).closest('li').addClass('on')
+    })
+
+    const buttonBack = $j(
+        '<button class="categories__back"><svg class="ico z-prev"><use xlink:href="#z-prev" /></svg><span>Voltar</span></button>'
+    )
+    $j('.categories .all-ul--2').prepend(
+        $j('<li class="all-li--2 back"></li>').prepend(buttonBack)
+    )
+    buttonBack.click(function () {
+        $j(this).closest('.parent.on').removeClass('on')
+    })
+}
+
 $j(document)
     .ready(function ($) {
         // document.ready
+        // icons
+        addSVG({
+            'z-next': {
+                selector: '.categories .parent',
+                mode: 'append',
+            },
+            'z-close': {
+                selector: '.categories__hide',
+                mode: 'html',
+            },
+        })
         // Create variable rgb
         createRootVariableRGB()
-
         // Scrolling
         scrollTop()
         // Categories title
         categoriesTitle()
-
         // Menu Categories
-        $('.categories .parent').click(function (event) {
-            if ($(event.target).hasClass('parent')) {
-                $(event.target).toggleClass('on')
-            }
-        })
+        menuMobile()
     })
     .on('resizeStop', function (e) {
         // Safe window.resize

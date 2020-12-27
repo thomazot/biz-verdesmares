@@ -52,7 +52,7 @@
         "imagemin-pngquant": "^9.0.0",
         "imagemin-zopfli": "^7.0.0",
         "postcss": "^6.0.23",
-        "postcss-pxtorem": "^4.0.1",
+        "postcss-pxtorem": "^5.1.1",
         "rollup": "^0.62.0"
     }
 }

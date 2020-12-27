@@ -1,0 +1,49 @@
+.search
+    .header &
+        flex: 0 1 500px
+
+        @media media-max-lg
+            position: absolute
+            top: 100%
+            left: 0
+            overflow: hidden
+            padding: 0 10px 10px
+            max-height: 100%
+            width: 100%
+            background: var(--primary)
+            transition: all .2s ease-in-out
+            transition-delay: .2s
+
+            .scrolling &
+                padding: 0 10px
+                max-height: 0
+
+        &__input
+            height: 48px
+            border: 0
+            border-radius: 0
+            box-shadow: none
+
+            @media media-max-lg
+                height: 40px
+
+        &__button
+            display: flex
+            justify-content: center
+            align-items: center
+            padding: 0
+            width: 48px
+            height: 48px
+            border-radius: 0
+            background: var(--button-contrast)
+            box-shadow: none
+            color: var(--button)
+
+            @media media-max-lg
+                width: 40px
+                height: 40px
+
+            .ico
+                width: 25px
+                height: 25px
+                fill: currentColor
