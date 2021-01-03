@@ -4,6 +4,9 @@
  * Update:   05/2016
  */
 
+const owlNext = `<svg class="ico z-carousel-next"><use xlink:href="#z-carousel-next"></use></svg>`
+const owlPrev = `<svg class="ico z-carousel-prev"><use xlink:href="#z-carousel-prev"></use></svg>`
+
 ;(function ($) {
     $.fn.neonTheme = function (options) {
         var neon = $.extend({}, $.fn.neonTheme.custom, options)
@@ -781,7 +784,7 @@ function default_categories_carrossel() {
     if (menu.find('.li--0').length > 0) {
         menu.find('.ul--0').owlCarousel({
             navigation: true,
-            navigationText: ['?', '?'],
+            navigationText: [owlPrev, owlNext],
             pagination: false,
             afterInit: function () {
                 menu.addClass('loaded')
@@ -817,7 +820,7 @@ function default_carrossel_produtos() {
 
                 $j(el).owlCarousel({
                     navigation: true,
-                    navigationText: ['?', '?'],
+                    navigationText: [owlPrev, owlNext],
                     items: 5,
                     itemsCustom: [
                         [0, 1],
@@ -910,7 +913,7 @@ function default_carrossel_brands() {
             $j(el).owlCarousel({
                 itemsScaleUp: true,
                 navigation: true,
-                navigationText: ['?', '?'],
+                navigationText: [owlPrev, owlNext],
                 pagination: false,
             })
         })
@@ -929,7 +932,7 @@ function default_carrossel_jointsales() {
                 singleItem: true,
                 itemScaleUp: true,
                 navigation: true,
-                navigationText: ['?', '?'],
+                navigationText: [owlPrev, owlNext],
                 autoHeight: true,
                 beforeMove: function () {
                     if (typeof $j.fn.lazyload != 'undefined') {
@@ -1457,6 +1460,7 @@ $j(document)
                 mode: 'html',
             },
         })
+
         // Create variable rgb
         createRootVariableRGB()
         // Scrolling
@@ -1478,3 +1482,13 @@ $j(document)
         // Safe ajax completed
         // Dispara apÃ³s completar com sucesso qualquer requisiÃ§Ã£o Ajax, e trÃ¡s a resposta do Ajax.
     })
+
+$j(window).load(function () {
+    if (
+        $j('#banner__home_banner_full').find('.owl-next').length &&
+        $j('#banner__home_banner_full').find('.owl-prev').length
+    ) {
+        $j('#banner__home_banner_full').find('.owl-next').html(owlNext)
+        $j('#banner__home_banner_full').find('.owl-prev').html(owlPrev)
+    }
+})

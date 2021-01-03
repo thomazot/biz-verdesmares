@@ -1,2 +1,45 @@
 .cms-home .header-container + .banner
     margin-top: -(gap / 2)
+
+    .ico
+        width: 16px
+        height: 48px
+
+.banner
+    img
+        width: 100%
+        object-fit: cover
+        object-position: center center
+
+#banner__rulers
+    margin-top: -(gap / 2)
+    background: var(--color-gray)
+
+    .banner
+        &__wrapper
+            container()
+
+            width: viewport !important
+
+    .rulers
+        &__item
+            display: flex
+            align-items: center
+            width: 100%
+
+            strong
+                display: block
+                color: var(--primary)
+                text-transform: uppercase
+                font-size: 14px
+
+            span
+                color: var(--color-text-gray)
+                font-size: 12px
+
+            .ico
+                flex: 0 0 33px
+                margin-right: 7px
+                width: 33px
+                height: 27px
+                fill: var(--primary)
