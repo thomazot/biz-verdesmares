@@ -12651,6 +12651,14 @@ body {
   margin: 2rem 0;
   font-weight: 700;
 }
+.footer .mymenu a[href='#'] {
+  pointer-events: none;
+}
+@media (min-width: 993px) {
+  .footer .mymenu a:hover {
+    color: var(--primary);
+  }
+}
 
 .header {
   position: relative;

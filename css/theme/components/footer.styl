@@ -62,3 +62,10 @@
                 display: inline-block
                 margin: gap 0
                 font-weight: bold
+
+            &[href='#']
+                pointer-events: none
+
+            @media media-min-lg
+                &:hover
+                    color: var(--primary)
