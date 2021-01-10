@@ -1469,6 +1469,22 @@ $j(document)
         categoriesTitle()
         // Menu Categories
         menuMobile()
+        //Ajuste empty css
+        emptyAdjust(['.price-box-parcelado'])
+        // Categorias mais buscadas
+        $('#mais-buscadas .ul--0').owlCarousel({
+            // itemsScaleUp: true,
+            navigation: true,
+            navigationText: [owlPrev, owlNext],
+            pagination: false,
+            itemsCustom: [
+                [0, 3],
+                [568, 4],
+                [768, 5],
+                [992, 6],
+                [1024, 7],
+            ],
+        })
     })
     .on('resizeStop', function (e) {
         // Safe window.resize
@@ -1482,6 +1498,20 @@ $j(document)
         // Safe ajax completed
         // Dispara apÃ³s completar com sucesso qualquer requisiÃ§Ã£o Ajax, e trÃ¡s a resposta do Ajax.
     })
+
+function isEmpty(element) {
+    return !$j.trim(element.html())
+}
+
+function emptyAdjust(selects) {
+    selects.forEach((select) => {
+        $j(select).each(function () {
+            if (isEmpty($j(this))) {
+                $j(this).html('')
+            }
+        })
+    })
+}
 
 $j(window).load(function () {
     if (
