@@ -1,4 +1,27 @@
 .header
+    position: relative
+    z-index: 2
+    justify-content: space-between
+    padding: (gap / 2) 0
+    background: var(--primary)
+    gap: gap
+
+    shadowBorder()
+
+    @media media-max-lg
+        position: static
+        padding: 10px 0
+        gap: 0
+
     &-container
         position: sticky
         top: 0
+        margin-top: -(gap / 2)
+        background: var(--primary)
+        color: var(--primary-contrast)
+
+        @media media-min-lg
+            margin-bottom: 66px !important
+
+        @media media-max-lg
+            margin-bottom: 66px !important

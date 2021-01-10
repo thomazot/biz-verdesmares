@@ -1,0 +1,30 @@
+@media media-max-lg
+    .accordion
+        margin: 0 -16px
+        background: white
+        box-shadow: 0 0 0 1px var(--color-gray)
+
+        > h3
+            display: flex
+            justify-content: space-between
+            align-items: center
+            padding-right: gap
+            padding-left: gap
+            text-align: left
+
+            &:after
+                display: inline-block
+                content: url(down)
+
+        > div
+            display: none
+            padding: (gap / 2) gap
+            border-top: solid 1px var(--color-gray)
+            text-align: left
+
+        &--on
+            > div
+                display: block
+
+            > h3:after
+                transform: rotate(-180deg)

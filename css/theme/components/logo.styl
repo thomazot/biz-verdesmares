@@ -1,4 +1,12 @@
 .logo
     .header &
+        flex: 0 0 auto
+
         img, svg
-            height: 48px
+            height: 60px
+
+            @media media-max-lg
+                height: 30px
+
+        img
+            object-fit: contain

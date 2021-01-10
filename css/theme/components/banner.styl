@@ -1,2 +1,158 @@
+.banner
+    &__wrapper
+        margin: -(gap / 2)
+        width: auto !important
+
+    &__item
+        padding: (gap / 2)
+
+    &__link
+        overflow: visible
+
+    &:not(.banner--nojs) img.d_img
+        max-width: 100%
+
+    img
+        width: 100%
+        object-fit: contain
+        object-position: center center
+
 .cms-home .header-container + .banner
-    margin: 0
+    margin-top: -(gap / 2)
+
+    .banner
+        &__wrapper
+            margin: 0
+
+        &__item
+            padding: 0
+
+            img
+                object-fit: cover
+
+    .ico
+        width: 16px
+        height: 48px
+
+#banner__rulers
+    margin-top: -(gap / 2)
+    background: var(--color-gray)
+
+    .banner
+        &__wrapper
+            container()
+
+            width: viewport !important
+
+        &__item
+            padding-top: 5px
+            padding-bottom: 5px
+
+            .slide__html
+                @media media-max-lg
+                    height: 40px !important
+
+    .rulers
+        &__item
+            display: flex
+            align-items: center
+            width: 100%
+            line-height: 1.2
+
+            strong
+                display: block
+                color: var(--primary)
+                text-transform: uppercase
+                font-size: 12px
+
+                @media media-min-lg
+                    font-size: 14px
+
+            span
+                color: var(--color-text-gray)
+                font-size: 10px
+
+                @media media-min-lg
+                    font-size: 12px
+
+            .ico
+                flex: 0 0 33px
+                margin-right: 7px
+                width: 33px
+                height: 27px
+                fill: var(--primary)
+
+#banner__banner-one
+    margin: gap 0
+
+#banner__banner-duo
+    margin: gap 0
+    padding: gap 0
+    background: var(--color-gray)
+
+    shadowBorder()
+
+    @media media-min-lg
+        padding: 80px 0
+
+    img
+        border-radius: 32px
+
+    &.banner--nojs
+        .banner__wrapper
+            column-count: 2
+
+            @media media-max-lg
+                column-count: 1
+
+#banner__banner-trio
+    margin: gap 0
+
+    &.banner--nojs
+        .banner__wrapper
+            column-count: 3
+
+            @media media-max-lg
+                column-count: 1
+
+#banner__lojas-especiais
+    margin: gap 0
+    padding: 60px 0
+    background: var(--primary)
+
+    shadowBorder()
+
+    &:before
+        display: block
+        color: var(--primary-contrast)
+        content: 'Lojas especiais'
+        text-align: center
+        text-transform: uppercase
+        font-weight: 800
+        font-size: 18px
+
+        @media media-min-lg
+            font-size: 24px
+
+        container()
+
+    .banner
+        &__wrapper
+            margin-top: 0
+
+            &:before
+                display: block
+                padding: 10px 0
+                color: var(--primary-contrast)
+                content: 'As melhores marcas de material de construção'
+                text-align: center
+                font-weight: regular
+                font-size: 14px
+
+                @media media-min-lg
+                    font-size: 18px
+
+                container()
+
+            img
+                border-radius: 32px

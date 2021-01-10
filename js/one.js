@@ -4,6 +4,9 @@
  * Update:   05/2016
  */
 
+const owlNext = `<svg class="ico z-carousel-next"><use xlink:href="#z-carousel-next"></use></svg>`
+const owlPrev = `<svg class="ico z-carousel-prev"><use xlink:href="#z-carousel-prev"></use></svg>`
+
 ;(function ($) {
     $.fn.neonTheme = function (options) {
         var neon = $.extend({}, $.fn.neonTheme.custom, options)
@@ -781,7 +784,7 @@ function default_categories_carrossel() {
     if (menu.find('.li--0').length > 0) {
         menu.find('.ul--0').owlCarousel({
             navigation: true,
-            navigationText: ['?', '?'],
+            navigationText: [owlPrev, owlNext],
             pagination: false,
             afterInit: function () {
                 menu.addClass('loaded')
@@ -817,10 +820,10 @@ function default_carrossel_produtos() {
 
                 $j(el).owlCarousel({
                     navigation: true,
-                    navigationText: ['?', '?'],
+                    navigationText: [owlPrev, owlNext],
                     items: 5,
                     itemsCustom: [
-                        [0, 1],
+                        [0, 2],
                         [568, 2],
                         [768, 3],
                         [1024, 4],
@@ -910,7 +913,7 @@ function default_carrossel_brands() {
             $j(el).owlCarousel({
                 itemsScaleUp: true,
                 navigation: true,
-                navigationText: ['?', '?'],
+                navigationText: [owlPrev, owlNext],
                 pagination: false,
             })
         })
@@ -929,7 +932,7 @@ function default_carrossel_jointsales() {
                 singleItem: true,
                 itemScaleUp: true,
                 navigation: true,
-                navigationText: ['?', '?'],
+                navigationText: [owlPrev, owlNext],
                 autoHeight: true,
                 beforeMove: function () {
                     if (typeof $j.fn.lazyload != 'undefined') {
@@ -1353,7 +1356,7 @@ function categoriesTitle() {
             item.querySelector('.a--0').textContent.trim()
         const child = item.querySelector('.box--1')
 
-        child.setAttribute('data-title', title)
+        if (child) child.setAttribute('data-title', title)
     })
 }
 
@@ -1425,23 +1428,73 @@ function createRootVariableRGB() {
     })
 }
 
+function menuMobile() {
+    const button = $j('.categories .z-next')
+    button.click(function () {
+        console.log('add class')
+        $j(this).closest('li').addClass('on')
+    })
+
+    const buttonBack = $j(
+        '<button class="categories__back"><svg class="ico z-prev"><use xlink:href="#z-prev" /></svg><span>Voltar</span></button>'
+    )
+    $j('.categories .all-ul--2').prepend(
+        $j('<li class="all-li--2 back"></li>').prepend(buttonBack)
+    )
+    buttonBack.click(function () {
+        $j(this).closest('.parent.on').removeClass('on')
+    })
+}
+
+function accordion() {
+    const $ = $j
+
+    $('.accordion h3').click(function () {
+        $(this).parent('.accordion').toggleClass('accordion--on')
+    })
+}
+
 $j(document)
     .ready(function ($) {
         // document.ready
+        // icons
+        addSVG({
+            'z-next': {
+                selector: '.categories .parent',
+                mode: 'append',
+            },
+            'z-close': {
+                selector: '.categories__hide',
+                mode: 'html',
+            },
+        })
+
         // Create variable rgb
         createRootVariableRGB()
-
         // Scrolling
         scrollTop()
         // Categories title
         categoriesTitle()
-
         // Menu Categories
-        $('.categories .parent').click(function (event) {
-            if ($(event.target).hasClass('parent')) {
-                $(event.target).toggleClass('on')
-            }
+        menuMobile()
+        //Ajuste empty css
+        emptyAdjust(['.price-box-parcelado'])
+        // Categorias mais buscadas
+        $('#mais-buscadas .ul--0').owlCarousel({
+            // itemsScaleUp: true,
+            navigation: true,
+            navigationText: [owlPrev, owlNext],
+            pagination: false,
+            itemsCustom: [
+                [0, 3],
+                [568, 4],
+                [768, 5],
+                [992, 6],
+                [1024, 7],
+            ],
         })
+        // accordion
+        accordion()
     })
     .on('resizeStop', function (e) {
         // Safe window.resize
@@ -1455,3 +1508,27 @@ $j(document)
         // Safe ajax completed
         // Dispara apÃ³s completar com sucesso qualquer requisiÃ§Ã£o Ajax, e trÃ¡s a resposta do Ajax.
     })
+
+function isEmpty(element) {
+    return !$j.trim(element.html())
+}
+
+function emptyAdjust(selects) {
+    selects.forEach((select) => {
+        $j(select).each(function () {
+            if (isEmpty($j(this))) {
+                $j(this).html('')
+            }
+        })
+    })
+}
+
+$j(window).load(function () {
+    if (
+        $j('#banner__home_banner_full').find('.owl-next').length &&
+        $j('#banner__home_banner_full').find('.owl-prev').length
+    ) {
+        $j('#banner__home_banner_full').find('.owl-next').html(owlNext)
+        $j('#banner__home_banner_full').find('.owl-prev').html(owlPrev)
+    }
+})

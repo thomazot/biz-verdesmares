@@ -1,0 +1,71 @@
+.footer
+    @media media-max-lg
+        text-align: center
+
+        .flex--a-center
+            justify-content: center
+
+    &__title
+        padding: (gap / 2) 0
+        color: var(--primary-hover)
+        font-weight: medium
+        font-size: 16px
+
+    &__content
+        + .footer__title
+            margin-top: (gap / 2)
+
+    &__socials
+        &--mobile
+            @media media-min-lg
+                overflow: hidden
+                margin: 0
+                padding: 0
+                max-height: 0
+
+        &--desktop
+            @media media-max-lg
+                overflow: hidden
+                margin: 0
+                padding: 0
+                max-height: 0
+
+    &__row
+        @media media-min-lg
+            display: flex
+            justify-content: space-between
+            gap: gap
+
+            &:nth-child(2)
+                .footer__box
+                    &:nth-child(1), &:nth-child(2)
+                        flex: 0 1 25%
+
+    &__copyright
+        margin-top: gap
+        padding: 60px 0
+        background: var(--primary)
+        color: var(--primary-contrast)
+        text-align: center
+        font-weight: regular
+        font-size: 12px
+
+        shadowBorder()
+
+    .mymenu
+        a
+            color: var(--color-text-gray)
+            font-weight: regular
+            font-size: 12px
+
+            &[href^='mailto']
+                display: inline-block
+                margin: gap 0
+                font-weight: bold
+
+            &[href='#']
+                pointer-events: none
+
+            @media media-min-lg
+                &:hover
+                    color: var(--primary)

@@ -26,6 +26,7 @@ var processors = [
     pxtorem({
         rootValue: rootValue,
         unitPrecision: unitPrecision,
+        selectorBlackList: ['.parent'],
         propList: [
             'font',
             'font-size',

@@ -1,0 +1,80 @@
+.abouts
+    color: var(--color-text-gray)
+    font-weight: regular
+    font-size: 14px
+
+    &__container
+        container()
+
+        @media media-min-lg
+            display: flex
+            gap: 60px
+
+        img
+            display: block
+            border-radius: 32px
+            object-fit: cover
+
+            @media media-max-lg
+                width: 100%
+
+    &__content
+        flex: 1
+        min-width: 0
+
+        @media media-min-lg
+            flex: 0 1 350px
+
+        @media media-max-lg
+            margin-bottom: gap
+
+    &__title
+        padding: gap 0
+        font-weight: bold
+        font-size: 34px
+
+    &__main
+        strong
+            display: block
+
+        p
+            line-height: 1.5
+
+        a
+            display: inline-flex
+            justify-content: center
+            align-items: center
+            margin-top: gap
+            padding: 0 gap
+            height: 50px
+            background: var(--button)
+            color: var(--button-contrast)
+            text-transform: uppercase
+            font-weight: bold
+            font-size: 17px
+
+    &__figure
+        margin: '0 %s' % -(gap / 2)
+
+        @media media-min-lg
+            display: flex
+            flex: 1
+            flex-flow: column nowrap
+            min-width: 0
+
+    &__loja
+        position: relative
+        margin: (gap / 2)
+
+        &--01
+            z-index: 2
+
+            @media media-min-lg
+                display: flex
+                justify-content: flex-end
+
+        &--02
+            z-index: 0
+
+            @media media-min-lg
+                margin-top: -80px

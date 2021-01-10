@@ -1,0 +1,83 @@
+.owl
+    owl-width = 56px
+    owl-height = 56px
+
+    &-carousel
+        --owl-button-width: owl-width
+        --owl-button-height: owl-height
+
+    &-next, &-prev
+        display: flex
+        justify-content: center
+        align-items: center
+        margin-top: -28px
+        width: var(--owl-button-width)
+        height: var(--owl-button-height)
+        border-radius: 0
+        background: white
+        box-shadow: 0 0 (gap / 2) rgba(0, 0, 0, .2)
+        color: var(--primary-hover)
+        text-indent: 0
+
+        @media media-min-lg
+            visibility: hidden
+            border-radius: 50%
+            opacity: 0
+
+        &:before
+            display: none
+
+        .ico
+            width: 11px
+            height: 18px
+            fill: currentColor
+
+        #banner__home_banner_full &
+            margin-top: -40px
+            width: 80px
+            height: 80px
+            background: rgba(255, 255, 255, .2)
+
+    &-next
+        @media media-max-lg
+            justify-content: flex-start
+            width: calc((var(--owl-button-width) / 2))
+            border-top-left-radius: calc(var(--owl-button-width) * 2)
+            border-bottom-left-radius: calc(var(--owl-button-width) * 2)
+
+            .ico
+                margin-left: 12px
+
+        @media media-min-lg
+            transition: all .2s ease-in-out
+            transform: translateX((-(gap)))
+
+            .owl-carousel:hover &
+                visibility: visible
+                opacity: 1
+                transform: translateX(0)
+
+        @media (min-width: viewport + (owl-width * 2))
+            right: -(owl-width)
+
+    &-prev
+        @media media-max-lg
+            justify-content: flex-end
+            width: calc((var(--owl-button-width) / 2))
+            border-top-right-radius: calc(var(--owl-button-width) * 2)
+            border-bottom-right-radius: calc(var(--owl-button-width) * 2)
+
+            .ico
+                margin-right: 12px
+
+        @media media-min-lg
+            transition: all .2s ease-in-out
+            transform: translateX(gap)
+
+            .owl-carousel:hover &
+                visibility: visible
+                opacity: 1
+                transform: translateX(0)
+
+        @media (min-width: viewport + (owl-width * 2))
+            left: -(owl-width)
