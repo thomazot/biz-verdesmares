@@ -823,7 +823,7 @@ function default_carrossel_produtos() {
                     navigationText: [owlPrev, owlNext],
                     items: 5,
                     itemsCustom: [
-                        [0, 1],
+                        [0, 2],
                         [568, 2],
                         [768, 3],
                         [1024, 4],
@@ -1446,6 +1446,14 @@ function menuMobile() {
     })
 }
 
+function accordion() {
+    const $ = $j
+
+    $('.accordion h3').click(function () {
+        $(this).parent('.accordion').toggleClass('accordion--on')
+    })
+}
+
 $j(document)
     .ready(function ($) {
         // document.ready
@@ -1485,6 +1493,8 @@ $j(document)
                 [1024, 7],
             ],
         })
+        // accordion
+        accordion()
     })
     .on('resizeStop', function (e) {
         // Safe window.resize

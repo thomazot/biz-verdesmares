@@ -1,0 +1,68 @@
+<div class="footer__row">
+    <div class="footer__box">
+        <div class="footer__socials footer__socials--mobile">
+            {{widget type="interface/widget_social" template="interface/widgets/social.phtml" identificador="socilas" redes="all"}}
+        </div>
+        <h3 class="footer__title">Atendimento: </h3>
+        <div class="footer__content">
+            {{block type="menubuilder/output" identifier="footer-atendimento"}}
+        </div>
+    </div>
+    <div class="footer__box">
+        <div class="accordion">
+            <h3 class="footer__title">Grupo Verdes Mares</h3>
+            <div class="footer__content">
+                {{block type="menubuilder/output" identifier="footer-grupo-verdes-mares"}}
+            </div>
+        </div>
+        <div class="footer__socials footer__socials--desktop">
+            {{widget type="interface/widget_social" template="interface/widgets/social.phtml" identificador="socilas" redes="all"}}
+        </div>
+    </div>
+    <div class="footer__box">
+        <div class="accordion">
+            <h3 class="footer__title">Tire suas dúvidas</h3>
+            <div class="footer__content">
+                {{block type="menubuilder/output" identifier="footer-tire-suas-duvidas"}}
+            </div>
+        </div>
+    </div>
+    <div class="footer__box">
+        <div class="accordion">
+            <h3 class="footer__title">Acessos</h3>
+            <div class="footer__content">
+                {{block type="menubuilder/output" identifier="footer-acessos"}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer__row">
+    <div class="footer__box">
+        <h3 class="footer__title">Formas de Pagamento</h3>
+        <div class="footer__content">
+            {{widget type="interface/widget_pagtos" template="interface/widgets/pagtos.phtml" identificador="pagtos_footer" pagtos="all"}}
+        </div>
+    </div>
+    <div class="footer__box">
+        <h3 class="footer__title">Formas de Envio</h3>
+        <div class="footer__content">
+        {{widget type="interface/widget_envios" template="interface/widgets/envios.phtml" identificador="sends" envios="5,6,7,8,9"}}
+        </div>
+    </div>
+    <div class="footer__box">
+        <h3 class="footer__title">Certificados</h3>
+        <div class="footer__content">
+        {{widget type="interface/widget_seals" template="interface/widgets/seals.phtml" identificador="securitys" seals="all"}}
+        </div>
+        <h3 class="footer__title">Design:</h3>
+        <div class="footer__content">
+            <img src="@img(nakarod)" alt="NakaRod" />
+        </div>
+    </div>
+</div>
+
+<div class="footer__copyright">
+    <p>© Grupo Verdes Mares 2018.</p>
+    <p>Todos os direitos reservados.</p>
+</div>

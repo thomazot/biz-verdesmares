@@ -1,0 +1,39 @@
+.socials
+    &
+        padding: 25px 0
+
+    &__svg
+        height: 27px
+
+    &__list
+        margin: 0
+
+    &__item
+        padding: 0
+
+        + .socials__item
+            margin-left: 16px !important
+
+    &__link
+        display: flex
+        justify-content: center
+        align-items: center
+
+    .facebook
+        .socials
+            &__link
+                display: flex
+                justify-content: center
+                align-items: flex-end
+                width: 27px
+                height: 27px
+                border-radius: 3px
+                background: var(--facebook)
+                color: white
+
+            &__svg
+                margin-right: -5px
+                height: 23px
+
+                path
+                    fill: currentColor
