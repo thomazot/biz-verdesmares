@@ -1495,6 +1495,20 @@ $j(document)
         })
         // accordion
         accordion()
+        // insert button filter
+        const filters = $('.filters')
+
+        if (filters.length) {
+            const buttonFilter = $(
+                '<button class="filters__show"><span>Filtrar</span></button>'
+            )
+
+            $('.col-main > .toolbar .amount').after(buttonFilter)
+
+            buttonFilter.click(function () {
+                $('.filters > .title').trigger('click')
+            })
+        }
     })
     .on('resizeStop', function (e) {
         // Safe window.resize

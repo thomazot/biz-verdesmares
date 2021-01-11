@@ -1,0 +1,65 @@
+.toolbar
+    .col-main > &
+        font-weight: medium
+        font-size: 14px
+
+        @media media-max-lg
+            text-align: center
+
+        @media media-min-lg
+            padding: 0 gap
+            min-height: 60px
+            background: var(--color-gray)
+
+        .amount span
+            font-weight: medium
+
+        .limiter
+            display: none
+
+        .sort-by
+            label
+                color: var(--color-text-gray)
+                font-weight: regular
+                font-size: 12px
+                opacity: 1
+
+                @media media-min-lg
+                    display: none
+
+            select
+                display: inline-block
+                padding: 0 (gap / 2)
+                height: 35px
+                border: solid 1px var(--color-border-gray)
+                border-radius: 0
+                background: #fff no-repeat url(select) center right 10px
+                box-shadow: none
+                color: var(--color-text-gray)
+                font-weight: medium
+                font-size: 14px
+                appearance: none
+
+    &-bottom
+        display: flex
+        align-items: center
+        height: 60px
+        border-top: solid 1px var(--color-gray)
+        border-bottom: solid 1px var(--color-gray)
+
+        .toolbar
+            width: 100%
+
+            .pager
+                margin-left: auto
+
+                a
+                    background: var(--primary)
+                    color: var(--primary-contrast)
+
+                    &.next, &.previous
+                        background: var(--primary-hover)
+                        color: var(--primary-hover-contrast)
+
+            .amount
+                display: none

@@ -1,0 +1,16 @@
+.breadcrumb
+    &__home
+        .breadcrumb__link:before
+            display: none
+
+    &__link, &__last, &__sep
+        color: var(--color-text-gray)
+        font-weight: regular
+        font-size: 11px
+
+    &__sep
+        span
+            display: none
+
+        &:before
+            content: '>'
