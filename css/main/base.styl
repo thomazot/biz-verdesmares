@@ -782,10 +782,10 @@ form.searchautocomplete
 
 .products__item
     display: flex
-    flex: 1 1 250px
+    flex: 1 1 210px
     margin: 0
     padding: 0 .5rem 1rem
-    min-width: 250px
+    min-width: 0
 
 .products__list .flex-fix
     order: 99
@@ -3835,13 +3835,9 @@ body.safari .product-image-thumbs .thumb-link
     line-height: 2.75em
     cursor: pointer
 
-.tabs__tab:not(:last-child)
-    margin-right: .25rem
-
 .tabs__tab.on
     top: 1px
     background: #fff
-    font-size: 1rem
     cursor: default
 
 .tabs__tab:hover
@@ -3934,18 +3930,6 @@ body.safari .product-image-thumbs .thumb-link
 
 .prod__shop .add-to-cart-buttons
     position: relative
-
-/* qtd */
-.prod__shop .qty-wrapper
-    position: absolute
-    top: 50%
-    left: .625rem
-    transform: translateY(-50%)
-
-.prod__shop .qty-wrapper input
-    border: 1px solid rgba(0, 0, 0, .1)
-    background: rgba(0, 0, 0, .1)
-    color: #fff
 
 /* @descricao(curta) */
 .prod__short-desc
@@ -9589,102 +9573,6 @@ table .change-product-link:hover
     .prod__name h1
         font-size: 2rem
 
-    /* @parcelamento */
-    .parcelamento .title
-        display: block
-        display: flex
-        justify-content: space-between
-        align-items: center
-        padding: 1rem
-        border: 1px solid rgba(0, 0, 0, .1)
-        background: #fff
-        font-size: 1rem
-
-    .parcelamento .title:after
-        display: block
-
-        icon('\f105')
-
-    .parcelamento ul
-        position: fixed
-        top: 0
-        left: 100%
-        z-index: 9999
-        overflow-y: auto
-        padding: 1rem
-        width: 100vw
-        height: 100vh
-        background: #fff
-        font-size: 1rem
-        transition: 600ms cubic-bezier(.23, 1, .32, 1)
-        column-gap: 0
-        column-count: initial
-
-    .parcelamento.on ul
-        transform: translateX(-100%)
-
-    .parcelamento__hide
-        display: block
-        margin: -1rem -1rem 1rem
-        border-radius: 0
-
-    /* @simulador-frete */
-    .frete__title
-        margin: 0
-        padding: 1rem
-        border: 1px solid rgba(0, 0, 0, .1)
-        border-radius: 0
-        background: #fff
-        box-shadow: none
-        font-size: 1rem
-
-    .frete__title span{@order -1}, .frete__title .ico
-        margin: 0 0 0 auto
-
-    .frete__content
-        position: fixed
-        top: 0
-        left: 100%
-        z-index: 999
-        display: flex
-        flex-flow: column nowrap
-        justify-content: center
-        align-items: center
-        overflow-y: auto
-        padding: 1rem
-        width: 100vw
-        height: 100vh
-        background: #fff
-        transition: 600ms cubic-bezier(.23, 1, .32, 1)
-
-    .frete--open .frete__content
-        display: flex
-        transform: translateX(-100%)
-
-    .frete__hide
-        position: absolute
-        top: 0
-        right: 0
-        left: 0
-        display: block
-        margin: 0
-        border-radius: 0
-
-    .frete__results
-        position: fixed
-        top: 0
-        left: 0
-        z-index: 9999
-        display: block !important
-        overflow-y: auto
-        width: 100vw
-        height: 100vh
-        transition: 600ms cubic-bezier(.23, 1, .32, 1)
-        transform: translateY(100%)
-
-    .frete.on .frete__results
-        transform: translateY(0)
-
     /* Produto - Compre Junto */
     .jointsales .owl-buttons
         display: block
@@ -9730,212 +9618,6 @@ table .change-product-link:hover
 
     .sharing-links .list:before
         display: none
-
-    /* .tabs */
-    .tabs
-        display: block
-
-    .tabs__tab
-        position: static
-        top: 0
-        display: flex
-        align-items: center
-        margin: 0 -1rem !important
-        padding: 1rem
-        border: 0
-        border-bottom: 1px solid rgba(0, 0, 0, .1)
-        background: #fff
-        font-weight: 700
-        font-size: 1rem
-
-    .tabs__tab:first-child
-        margin-left: auto
-
-    .tabs__tab:after
-        icon('\f105')
-
-        margin-left: auto
-
-    .tabs__content
-        position: fixed
-        top: 0
-        left: 0
-        z-index: 999
-        overflow-y: auto
-        padding: 1rem
-        width: 100vw
-        height: 100vh
-        border: 0
-        background: #fff
-        transition: 600ms cubic-bezier(.23, 1, .32, 1)
-        transform: translateX(100%)
-
-    .tabs__content.open
-        transform: translateX(0)
-
-    .tabs__hide
-        display: block
-        margin: -1rem -1rem 1rem
-        border-radius: 0
-
-    /* Produto
-     * @relacionados
-     * @recomendados
-     * @quemviu
-     * @compre-junto
-     * @vendas-acima
-     */
-    .related__title, .recommended__title, .whosaw__title, .jointsales__title, .upsell__title
-        display: flex
-        align-items: center
-        margin: 0 -1rem
-        padding: 1rem
-        border-bottom: 1px solid rgba(0, 0, 0, .1)
-        background: #fff
-        font-weight: 700
-        font-size: 1rem
-        cursor: pointer
-
-    .related__title:after, .recommended__title:after, .whosaw__title:after, .jointsales__title:after, .upsell__title:after
-        icon('\f105')
-
-        margin-left: auto
-
-    .related__content, .recommended__content, .whosaw__content, .jointsales__content, .upsell__content
-        position: fixed
-        top: 0
-        left: 0
-        z-index: 999
-        overflow-y: auto
-        padding: 1rem
-        width: 100vw
-        height: 100vh
-        background: #fff
-        transition: 600ms cubic-bezier(.23, 1, .32, 1)
-        transform: translateX(100%)
-
-    .related.on .related__content, .recommended.on .recommended__content, .whosaw.on .whosaw__content, .jointsales.on .jointsales__content, .upsell.on .upsell__content
-        transform: translateX(0)
-
-    .related__hide, .recommended__hide, .whosaw__hide, .jointsales__hide, .upsell__hide
-        display: block
-        margin: -1rem -1rem 1rem
-        border-radius: 0
-
-    /* @compre-junto */
-    .jointsales__content
-        display: block
-
-    .jointsales__current
-        flex-flow: row nowrap
-        margin: 0
-        padding: 0
-
-    .jointsales .more
-        top: calc(100% - 1rem)
-        right: calc(50% - 1rem)
-        transform: scale(1.5)
-
-    .jointsales__items
-        min-width: 100%
-
-    .jointsales .owl-wrapper-outer
-        border-width: 0 1px 1px
-
-    .jointsales__row
-        display: block
-
-    .jointsales__list
-        display: block
-
-    .jointsales__item
-        display: flex
-        flex-flow: row wrap
-        padding: 0
-        max-width: none
-
-    .jointsales__item:not(:first-child)
-        margin-top: 1rem
-        padding-top: 1rem
-        border: 0
-        border-top: 1px solid rgba(0, 0, 0, .1)
-
-    .jointsales__item .thumb
-        flex: 0 0 40%
-        margin: 0
-        padding: 0 1rem 0 0
-
-    .btn-jointsales
-        width: 100%
-
-    /* avaliacoes(form) */
-    .reviews .subtitle
-        border-top: 1px solid rgba(0, 0, 0, .1)
-        text-align: center
-        opacity: .5
-
-    .reviews__title
-        display: flex
-        align-items: center
-        margin: 0 -1rem
-        padding: 1rem
-        border-bottom: 1px solid rgba(0, 0, 0, .1)
-        background: #fff
-        font-weight: 400
-        font-size: 1rem
-
-    .reviews__title:after
-        icon('\f123')
-
-        margin-left: auto
-
-    .reviews__content
-        position: fixed
-        top: 0
-        left: 0
-        z-index: 999
-        display: block
-        overflow-y: auto
-        padding: 1rem
-        width: 100vw
-        height: 100vh
-        background: #fff
-        transition: 600ms cubic-bezier(.23, 1, .32, 1)
-        transform: translateX(100%)
-
-    .reviews.on .reviews__content
-        transform: translateX(0)
-
-    .reviews__resume, .reviews__ratings, .reviews__add
-        margin: 0
-        padding: 0
-        background: none
-        box-shadow: none
-
-    .reviews__resume .product-rate .percent
-        margin: 0 20%
-
-    .reviews__ratings
-        margin-bottom: 1rem
-
-    .reviews__no-reviews
-        padding: 0
-
-    .reviews__hide
-        display: block
-        margin: -1rem -1rem 1rem
-        border-radius: 0
-
-    /* @parcelamento & @simulador-frete */
-    .parcelamento .title
-        margin-right: -1rem
-        margin-left: -1rem
-        border-width: 1px 0
-
-    .frete__title
-        margin-right: -1rem
-        margin-left: -1rem
-        border-width: 0 0 1px
 
     /* @links */
     .add-to-links

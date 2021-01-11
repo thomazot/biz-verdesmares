@@ -21,8 +21,27 @@
             .label
                 display: none
 
+    .prod__shop &
+        margin: 0 -5px
+
+        .regular-price, .special-price, .old-price, .minimal-price
+            padding: 5px
+
+            .label, .price
+                span
+                    font-weight: medium
+                    font-size: 14px
+
+        .regular-price, .special-price, .minimal-price
+            .label span
+                color: var(--primary-hover)
+
+            .price span
+                color: var(--primary-hover)
+                font-size: 24px
+
 .price-box-parcelado
-    .products__case &
+    .products__case &, .prod__shop &
         margin-bottom: 0
 
         &:empty, .upto
@@ -33,19 +52,19 @@
             font-weight: medium
             font-size: 12px
 
+    .prod__shop &
+        margin-top: 5px
+
 .preco-parcelado-sem-juros
-    .products__case &
+    .products__case &, .prod__shop &
         + .preco-parcelado
             display: none
 
 .price-box-avista
-    .products__case &
+    .products__case &, .prod__shop &
         display: flex
         flex-flow: row wrap
-        margin-top: 10px
         margin-bottom: 0
-        padding-top: 10px
-        border-top: solid 1px var(--color-gray)
         line-height: 1.3
 
         .price
@@ -57,10 +76,21 @@
                 font-size: 16px
 
         .label
-            flex: 0 0 100%
             min-width: 0
 
             span
                 color: var(--primary-hover)
                 font-weight: bold
                 font-size: 12px
+
+    .products__case &
+        margin-top: 10px
+        padding-top: 10px
+        border-top: solid 1px var(--color-gray)
+
+        .label
+            flex: 0 0 100%
+
+    .prod__shop &
+        .label
+            margin-left: 3px

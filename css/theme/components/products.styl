@@ -40,10 +40,19 @@
                 width: auto !important
 
     &__item, .carrossel &__item
+        position: relative
+        z-index: 1
         padding: (gap / 2)
 
         @media media-max-lg
             padding: 0
+
+        &:hover
+            z-index: 2
+
+    &__item
+        @media media-max-sm
+            flex: 1 1 140px
 
     &__case
         padding: 10px

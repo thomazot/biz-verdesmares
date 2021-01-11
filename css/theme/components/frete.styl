@@ -1,0 +1,36 @@
+.frete
+    @media media-max-lg
+        margin-top: (gap / 2)
+
+    &__naosei, &__title
+        display: none
+
+    &__content
+        display: block
+
+    &__form
+        label
+            padding-left: 0
+            background: none
+            box-shadow: none
+            color: var(--color-text-gray-light)
+            text-transform: none
+            font-size: 0
+
+            &:before
+                content: 'Simular o frete: '
+                font-size: 14px
+
+        .input-text
+            max-width: 118px
+            height: 40px
+            border: solid 1px var(--color-border-gray)
+            border-radius: 0
+            box-shadow: none
+
+    &__actions
+        .btn
+            height: 40px
+            border-radius: 0
+            font-weight: bold
+            font-size: 14px

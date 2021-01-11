@@ -1,0 +1,44 @@
+<div class="prod__img">
+    <div class="prod__name--mobile">
+        <button class="button button-back"><span>Voltar</span></button>
+        <h3>@nome</h3>
+    </div>
+    @fotos
+    @selos
+</div>
+<div class="prod__shop">	
+    <div class="col">
+        @avaliacoes
+		<div class="prod__name">
+			<h1 class="prod__name--desktop">@nome</h1>
+            <div class="prod__head">
+                <small class="sku">Código: @atributo(sku)</small>
+                @marca
+            </div>
+		</div>
+        @if(is_disponivel)
+        <div class="prod__prices">
+			@preco
+			@preco(avista)
+			@preco(parcelado)	
+        </div>
+        @variacoes
+        <div class="prod__call-to-action">
+            @bt(comprar)
+        </div>
+        @simulador-frete
+        <a class="prod__payments" href="javascript:void(0)" onclick="modal_open('payments')">Ver parcelamento</a>
+        <div id="payments">
+            @parcelamento
+        </div>
+        <script>modal('payments');</script>
+        @else(is_disponivel)		
+			<div class="prod__esgotado">
+				<div class="title title--sm">Produto Esgotado</div>
+				@alertas
+			</div>
+		@endif(is_disponivel)
+    </div>
+</div>
+
+{{widget type="banner/widget_banner" template="banner/banner.phtml" banner="rulers"}}
