@@ -1,0 +1,159 @@
+.jointsales
+    .more
+        top: 50%
+        color: var(--primary-hover)
+        font-size: 80px
+        transform: translateY(-50%)
+
+        @media media-max-lg
+            display: none
+
+        &:before
+            content: '+'
+            font-weight: 600
+            font-family: font
+
+    &__currentin, &__item
+        .info .title
+            font-weight: regular
+            font-size: 14px
+
+        .regular-price
+            .label
+                display: none
+
+            .price span
+                font-weight: bold
+                font-size: 16px
+
+    .jointsales &__row
+        align-items: center
+        gap: gap
+
+        @media media-max-lg
+            display: block
+            padding: 0
+
+    &__currentin
+        @media media-max-lg
+            .jointsales &
+                display: flex
+
+                .thumb
+                    margin-right: 10px
+                    min-width: 40%
+
+    &__item
+        display: flex
+        flex: 1
+        padding: 0
+        max-width: none
+
+        @media media-max-lg
+            .thumb
+                width: 40%
+
+            .jointsales__options
+                li
+                    flex: 0 0 100%
+
+    &__current
+        padding: 0
+
+        @media media-min-lg
+            flex: 0 1 33.333%
+
+    &__list
+        .jointsales__current + &
+            flex: 0 1 33.333%
+            align-self: center
+
+    &__infos
+        position: relative
+        flex: 1
+        min-width: 0
+
+        @media media-max-lg
+            margin-top: (gap / 2)
+
+        @media media-min-lg
+            padding-left: 40px
+
+        &:before
+            @media media-min-lg
+                position: absolute
+                top: 50%
+                left: 0
+                color: var(--primary-hover)
+                content: '='
+                font-size: 80px
+                transform: translateY(-50%)
+
+    &__currentin
+        display: block
+        padding: 0
+        box-shadow: none
+
+        .thumb
+            margin: 0
+
+    .jointsales &__options
+        padding: 0
+        gap: 0
+
+    &__payments
+        display: none
+
+    &__action
+        text-align: center
+
+        .btn
+            display: inline-flex
+            justify-content: center
+            align-items: center
+            padding: 0
+            width: 245px
+            height: 50px
+            border-radius: 0
+            background: var(--button)
+            color: var(--button-contrast)
+            font-weight: medium
+            font-size: 24px
+
+            .ico
+                margin-right: 8px
+                width: 24px
+                height: 24px
+                fill: currentColor
+
+    &__totals
+        margin-top: 0
+        text-align: center
+
+        .economize
+            display: none
+
+        .todos-juntos
+            color: var(--primary-hover)
+            font-weight: bold
+            font-size: 16px
+
+            .price
+                display: block
+                color: #D90000
+                text-decoration: line-through
+                font-weight: regular
+
+        .comprando-junto
+            font-size: 0
+
+            .price
+                font-weight: medium
+                font-size: 24px
+
+    .owl-wrapper-outer
+        border: 0
+        box-shadow: none
+
+    select
+        selectFake()

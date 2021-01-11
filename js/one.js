@@ -101,12 +101,6 @@ const owlPrev = `<svg class="ico z-carousel-prev"><use xlink:href="#z-carousel-p
          * addSVG() - defaults
          */
         if (neon.default_SVGs !== false) {
-            var truck = {
-                'img-truck': {
-                    selector: '.frete__title',
-                    mode: 'append',
-                },
-            }
             var svgs = {
                 'img-truck': {
                     selector:
@@ -161,7 +155,6 @@ const owlPrev = `<svg class="ico z-carousel-prev"><use xlink:href="#z-carousel-p
             }
             $j(document).ready(function () {
                 addSVG(svgs)
-                addSVG(truck)
             })
         }
         if (neon.addSVG !== false) {
@@ -1239,22 +1232,16 @@ $j.fn.neonTheme.custom = {
     m_filters: true, // ativa o responsivo dos Filtros do Catálogo
     m_myaccount: true, // ativa o responsivo da Minha Conta
     m_mycart: true, // ativa o responsivo do Meu Carrinho
-    m_parcelamento: true, // ativa o responsivo do parcelamento na página de produto
-    m_frete: true, // ativa o responsivo do cálculo de frete na página do produto
-    m_produto: true, // ativa o responsivo de cada bloco da página de produto
-    m_tabs: true, // ativa o responsivo do componente .tabs do tema
+    m_parcelamento: false, // ativa o responsivo do parcelamento na página de produto
+    m_frete: false, // ativa o responsivo do cálculo de frete na página do produto
+    m_produto: false, // ativa o responsivo de cada bloco da página de produto
+    m_tabs: false, // ativa o responsivo do componente .tabs do tema
     m_painelCliente: true, // ativa o responsivo do Menu do Painel de Cliente
     /**
      * Funcionalidades do Tema
      */
     dropFrom: false,
-    addSVG: {
-        'img-truck': {
-            selector: '.frete .frete__content .input-box label',
-            mode: 'prepend',
-            ratio: false,
-        },
-    },
+    addSVG: {},
 }
 
 /**
@@ -1447,10 +1434,18 @@ function menuMobile() {
 }
 
 function accordion() {
-    const $ = $j
+    $j('.accordion h3').click(function () {
+        $j(this).parent('.accordion').toggleClass('accordion--on')
+    })
+}
 
-    $('.accordion h3').click(function () {
-        $(this).parent('.accordion').toggleClass('accordion--on')
+function jointsales() {
+    $j('.jointsales__row').each(function () {
+        const item = $j(this)
+        $j(
+            '.jointsales__totals, .jointsales__payments, .jointsales__action',
+            this
+        ).wrapAll('<div class="jointsales__infos"></div>')
     })
 }
 
@@ -1467,8 +1462,17 @@ $j(document)
                 selector: '.categories__hide',
                 mode: 'html',
             },
+            'z-cart': {
+                selector: '.add-to-cart-btn',
+                mode: 'prepend',
+            },
         })
-
+        addSVG({
+            'z-cart': {
+                selector: '.jointsales__action .btn',
+                mode: 'prepend',
+            },
+        })
         // Create variable rgb
         createRootVariableRGB()
         // Scrolling
@@ -1509,6 +1513,8 @@ $j(document)
                 $('.filters > .title').trigger('click')
             })
         }
+        // jointsale
+        jointsales()
     })
     .on('resizeStop', function (e) {
         // Safe window.resize

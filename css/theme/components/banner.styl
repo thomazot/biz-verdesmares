@@ -38,6 +38,15 @@
     margin-top: -(gap / 2)
     background: var(--color-gray)
 
+    .catalog-product-view &
+        margin: (gap / 2) 0
+        max-width: 100%
+
+        shadowBorder()
+
+        @media media-max-lg
+            display: none
+
     .banner
         &__wrapper
             container()
