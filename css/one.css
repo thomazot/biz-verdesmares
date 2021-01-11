@@ -11385,6 +11385,24 @@ body {
 .ias-noneleft {
   display: none !important;
 }
+input[type=text],
+input[type=password],
+input[type=search],
+input[type=email],
+input[type=url],
+input[type=tel],
+input[type=number],
+input[type=date],
+input[type=mounth],
+input[type=week],
+input[type=time],
+input[type=datetime],
+input[type=datetime-local],
+input[type=color] {
+  border: solid 1px var(--color-border-gray);
+  border-radius: 0;
+  box-shadow: none;
+}
 
 .abouts {
   color: var(--color-text-gray);
@@ -13471,11 +13489,12 @@ body {
 }
 
 .qty-wrapper {
+  min-width: 60px;
   height: 3.13rem;
 }
 .qty-wrapper input {
   width: 100%;
-  height: 100%;
+  height: 100% !important;
   border: solid 1px var(--color-border-gray);
   border-radius: 0;
   background: var(--color-gray);
@@ -13743,6 +13762,164 @@ body {
   display: none;
 }
 
+.accountlogin {
+  text-align: center;
+}
+.accountlogin .title {
+  color: var(--primary);
+  font-weight: 400;
+  font-size: 1.13rem;
+}
+@media (min-width: 993px) {
+  .accountlogin .title {
+    font-size: 1.5rem;
+  }
+}
+.accountlogin__registered .forgot {
+  position: static;
+  display: block;
+  margin-top: 0.31rem;
+  color: var(--color-text-gray);
+  text-align: right;
+  text-decoration: underline;
+  font-weight: 400;
+  font-size: 0.75rem;
+}
+.accountlogin__registered .form-list .fields > .actions {
+  flex: 0 0 100%;
+}
+.accountlogin__registered .form-list .fields > .actions .btn {
+  width: 100%;
+  height: 2.5rem;
+  border: 0;
+  border-radius: 0;
+  background: var(--button);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+.accountlogin__new .buttons-set .btn {
+  width: 100%;
+  height: 2.5rem;
+  border: 0;
+  border-radius: 0;
+  background: var(--button);
+  box-shadow: none;
+  color: var(--button-contrast);
+  text-transform: uppercase;
+  text-shadow: none;
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+.account-create form {
+  margin-top: 5rem;
+}
+.account-create .subtit,
+.account-create .form-instructions {
+  display: none;
+}
+.form-list .fields.tipopessoa {
+  margin-top: -3.75rem;
+}
+.form-list .fields.tipopessoa input {
+  position: absolute;
+  visibility: hidden;
+}
+.form-list .fields.tipopessoa label,
+.form-list .fields.tipopessoa label.on {
+  color: var(--color-text-gray);
+  font-weight: 600;
+  font-size: 0.88rem;
+}
+
+.cart-table footer {
+  display: none;
+}
+.cart-table .th {
+  text-transform: none;
+  font-weight: 700;
+  font-size: 1.13rem;
+}
+.cart-table .btn-remove:before {
+  color: var(--color-text-gray);
+  font-size: 1.25rem;
+}
+.cart-table .cart-price {
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+.cart-table h2.name {
+  font-size: 1rem;
+}
+.cart-table .qty-wrapper input {
+  background: #fff;
+}
+.cart-product-line {
+  background: var(--color-gray);
+}
+.cart__boxes {
+  margin-top: 2rem;
+}
+.cart .shipping .title,
+.cart .coupon .title,
+.cart .totals .title {
+  color: var(--primary);
+  text-transform: none !important;
+  font-weight: 700 !important;
+  font-size: 1.13rem !important;
+}
+.cart .shipping__postcode label {
+  font-size: 0;
+}
+.cart .shipping__postcode label:before {
+  color: var(--color-text-gray-light);
+  content: 'Simular o frete: ';
+  font-weight: 400;
+  font-size: 0.88rem;
+}
+.cart .shipping__action .btn,
+.cart .coupon__action .btn {
+  border-radius: 0;
+  text-transform: none;
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+.cart .shipping__action .btn span,
+.cart .coupon__action .btn span {
+  display: none;
+}
+.cart .shipping__action .btn:before,
+.cart .coupon__action .btn:before {
+  content: 'ok';
+}
+.cart .totals__content .price {
+  color: var(--color-text-gray);
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+.cart .totals__content td,
+.cart .totals__content th,
+.cart .totals__content td strong,
+.cart .totals__content th strong {
+  color: var(--color-text-gray-light);
+  font-weight: 400;
+  font-size: 0.88rem;
+}
+.cart .totals__content tfoot td:last-child,
+.cart .totals__content tfoot td:last-child .price {
+  color: var(--primary);
+}
+.cart__links .btn-checkout {
+  margin-top: 1.25rem;
+  margin-left: auto;
+  max-width: 100%;
+  width: 25rem;
+  height: 4.38rem;
+  border-radius: 0;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
 .category-image {
   display: none;
 }
@@ -13764,6 +13941,18 @@ body {
 @media (max-width: 992px) {
   .catalog-category-view .breadcrumb {
     display: none;
+  }
+}
+
+.page-title h1 {
+  color: var(--button);
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 1.13rem;
+}
+@media (min-width: 993px) {
+  .page-title h1 {
+    font-size: 1.5rem;
   }
 }
 

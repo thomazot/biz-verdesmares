@@ -1,0 +1,91 @@
+.cart-table
+    footer
+        display: none
+
+    .th
+        text-transform: none
+        font-weight: bold
+        font-size: 18px
+
+    .btn-remove:before
+        color: var(--color-text-gray)
+        font-size: 20px
+
+    .cart-price
+        font-weight: bold
+        font-size: 14px
+
+    h2.name
+        font-size: 16px
+
+    .qty-wrapper
+        input
+            background: white
+
+.cart-product-line
+    background: var(--color-gray)
+
+.cart
+    &__boxes
+        margin-top: gap
+
+    .shipping, .coupon, .totals
+        .title
+            color: var(--primary)
+            text-transform: none !important
+            font-weight: bold !important
+            font-size: 18px !important
+
+    .shipping
+        &__postcode
+            label
+                font-size: 0
+
+                &:before
+                    color: var(--color-text-gray-light)
+                    content: 'Simular o frete: '
+                    font-weight: regular
+                    font-size: 14px
+
+    .shipping, .coupon
+        &__action
+            .btn
+                border-radius: 0
+                text-transform: none
+                font-weight: bold
+                font-size: 14px
+
+                span
+                    display: none
+
+                &:before
+                    content: 'ok'
+
+    .totals
+        &__content
+            .price
+                color: var(--color-text-gray)
+                font-weight: bold
+                font-size: 14px
+
+            td, th
+                &, strong
+                    color: var(--color-text-gray-light)
+                    font-weight: regular
+                    font-size: 14px
+
+            tfoot
+                td:last-child
+                    &, .price
+                        color: var(--primary)
+
+.cart__links
+    .btn-checkout
+        margin-top: 20px
+        margin-left: auto
+        max-width: 100%
+        width: 400px
+        height: 70px
+        border-radius: 0
+        text-transform: uppercase
+        font-size: 24px
